@@ -12,7 +12,12 @@
   "license": "MIT",
   "bin": "./generate.js",
   "devDependencies": {
-    "jest": "^27.5.1"
+    "eslint": "^8.12.0",
+    "eslint-plugin-jest": "^26.1.3",
+    "eslint-plugin-prettier": "^4.0.0",
+    "jest": "^27.5.1",
+    "prettier": "^2.6.1",
+    "standard-version": "^9.3.2"
   },
   "peerDependencies": {
     "next": "^12.0.0"
@@ -26,6 +31,9 @@
     "url": "https://github.com/geops/next-nginx-routes.git"
   },
   "scripts": {
-    "test": "jest"
+    "format": "prettier --write *.js",
+    "lint": "eslint *.js",
+    "test": "jest",
+    "release": "standard-version"
   }
 }
