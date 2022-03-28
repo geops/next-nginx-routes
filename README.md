@@ -2,6 +2,25 @@
 
 Generate Nginx routes configuration file for Next.js static HMTL export.
 
+This [NPM package](https://www.npmjs.com/package/next-nginx-routes) allows you to convert Next.js routes like:
+
+```json
+{
+  "page": "/[foo]",
+  "regex": "^/([^/]+?)(?:/)?$",
+  "routeKeys": { "foo": "foo" },
+  "namedRegex": "^/(?<foo>[^/]+?)(?:/)?$"
+}
+```
+
+... into Nginx routes like:
+
+```nginx
+location ~ ^/([^/]+?)(?:/)?$ {
+  try_files /[foo].html /index.html;
+}
+```
+
 ## Getting started
 
 ### Installation
@@ -28,7 +47,7 @@ yarn run export
 
 ### Include Nginx configuration file
 
-Finally include the generated configuration file `next-routes.conf` and the Next.js output in your Nginx site configuration file. See `example` folder for a minimal Docker example.
+Finally include the generated configuration file `next-routes.conf` and the Next.js output in your Nginx site configuration file.
 
 ## Requirements
 
@@ -37,4 +56,5 @@ Finally include the generated configuration file `next-routes.conf` and the Next
 
 ## More
 
-- TODO: blog post
+- See [`example`](https://github.com/geops/next-nginx-routes/tree/main/example) folder for a minimal Docker example.
+- Read more about this approach in our [blog post](https://geops.ch/en/blog/next-nginx-routes).
