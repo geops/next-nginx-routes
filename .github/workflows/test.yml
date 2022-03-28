@@ -1,11 +1,16 @@
-steps:
-  - uses: actions/checkout@v2
-  - uses: actions/setup-node@v2
-    with:
-      node_version:
-        - 14
-        - 16
-      cache: "yarn"
-  - run: yarn install
-  - run: cd example && yarn install
-  - run: yarn test
+name: Test
+on: [push]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node_version:
+            - 14
+            - 16
+          cache: "yarn"
+      - run: yarn install
+      - run: cd example && yarn install
+      - run: yarn test
