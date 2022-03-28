@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`generate routes for example project 1`] = `
+"
+location ~ ^/(?:/)?$ {
+    try_files /index.html /index.html;
+}
+
+location ~ ^/([^/]+?)/([^/]+?)/([^/]+?)(?:/)?$ {
+    try_files /[foo]/[bar]/[id].html /index.html;
+}
+
+location ~ ^/([^/]+?)(?:/)?$ {
+    try_files /[foo].html /index.html;
+}
+
+location ~ ^/hello/world(?:/)?$ {
+    try_files /hello/world.html /index.html;
+}"
+`;

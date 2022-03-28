@@ -1,0 +1,14 @@
+{
+  "private": true,
+  "dependencies": {
+    "next": "^12.1.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "next-nginx-routes": "./.."
+  },
+  "scripts": {
+    "export": "next build && next export && next-nginx-routes"
+  }
+}

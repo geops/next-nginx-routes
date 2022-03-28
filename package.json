@@ -1,0 +1,31 @@
+{
+  "name": "next-nginx-routes",
+  "description": "Generate Nginx routing configuration for static Next.js projects.",
+  "version": "1.0.0",
+  "keywords": [
+    "Next.js",
+    "Nginx",
+    "configuration",
+    "routing",
+    "static"
+  ],
+  "license": "MIT",
+  "bin": "./generate.js",
+  "devDependencies": {
+    "jest": "^27.5.1"
+  },
+  "peerDependencies": {
+    "next": "^12.0.0"
+  },
+  "bugs": {
+    "url": "https://github.com/geops/next-nginx-routes/issues"
+  },
+  "homepage": "https://geops.ch/en/blog/next-nginx-routes",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/geops/next-nginx-routes.git"
+  },
+  "scripts": {
+    "test": "jest"
+  }
+}

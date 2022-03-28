@@ -1,0 +1,5 @@
+example/.next
+example/out
+example/next-routes.conf
+
+node_modules
