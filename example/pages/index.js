@@ -9,8 +9,18 @@ export default function IndexPage() {
         </Link>
       </li>
       <li>
+        <Link href="/foo/bar/hello">
+          <a>Foo Bar Hello example</a>
+        </Link>
+      </li>
+      <li>
         <Link href="/foo">
           <a>Foo index example</a>
+        </Link>
+      </li>
+      <li>
+        <Link href="/hello">
+          <a>Hello example</a>
         </Link>
       </li>
       <li>
