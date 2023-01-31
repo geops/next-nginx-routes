@@ -20,22 +20,22 @@ const routes = manifest.staticRoutes
   .map((route) => {
     if (route.page === "/") {
       route.page = "/index";
-    }
+    } else {
+      /**
+      In next.config.js, if trailingSlash is true, built files will be in sub-directory.
+      When trailing slash is false (by default)
+        /pages/posts.tsx            => /posts.html
+        /pages/posts/[id]/index.tsx => /posts/[id].html
+        /pages/posts/[id]/edit.tsx  => /posts/[id]/edit.html
 
-    /**
-    In next.config.js, if trailingSlash is true, built files will be in sub-directory.
-    When trailing slash is false (by default)
-      /pages/posts.tsx            => /posts.html
-      /pages/posts/[id]/index.tsx => /posts/[id].html
-      /pages/posts/[id]/edit.tsx  => /posts/[id]/edit.html
-
-    When trailing slash is true.
-      /pages/posts.tsx            => /posts/index.html
-      /pages/posts/[id]/index.tsx => /posts/[id]/index.html
-      /pages/posts/[id]/edit.tsx  => /posts/[id]/edit/index.html
-     */
-    if (nextConfig.trailingSlash) {
-      route.page = `${route.page}/index`;
+      When trailing slash is true.
+        /pages/posts.tsx            => /posts/index.html
+        /pages/posts/[id]/index.tsx => /posts/[id]/index.html
+        /pages/posts/[id]/edit.tsx  => /posts/[id]/edit/index.html
+      */
+      if (nextConfig.trailingSlash) {
+        route.page = `${route.page}/index`;
+      }
     }
 
     return `
