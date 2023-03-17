@@ -10,12 +10,25 @@ const manifest = JSON.parse(readFileSync(routesManifest, "utf8"));
 const routes = manifest.staticRoutes
   .concat(manifest.dynamicRoutes)
   .map((route) => {
+    const basePath = manifest.basePath || "";
+
+    let page = route.page;
+    let regex = route.regex;
+
     if (route.page === "/") {
-      route.page = "/index";
+      page = "/index";
     }
+
+    if (basePath) {
+      regex =
+        route.regex.slice(0, 1) +
+        basePath +
+        route.regex.slice(route.page === "/" ? 2 : 1);
+    }
+
     return `
-location ~ ${route.regex} {
-    try_files ${route.page}.html /index.html;
+location ~ ${regex} {
+    try_files ${page}.html /index.html;
 }`;
   });
 
