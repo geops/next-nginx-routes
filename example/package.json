@@ -7,10 +7,9 @@
   },
   "devDependencies": {
     "eslint": "^8.26.0",
-    "eslint-config-next": "^13.0.0",
-    "next-nginx-routes": "./.."
+    "eslint-config-next": "^13.0.0"
   },
   "scripts": {
-    "export": "next build && next export && next-nginx-routes"
+    "export": "next build && next export && node ../generate.js"
   }
 }
