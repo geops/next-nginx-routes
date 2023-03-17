@@ -1,14 +1,15 @@
 {
   "private": true,
   "dependencies": {
-    "next": "^14.0.1",
+    "next": "^13.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "next-nginx-routes": "./.."
+    "eslint": "^8.26.0",
+    "eslint-config-next": "^13.0.0"
   },
   "scripts": {
-    "build": "next build && next-nginx-routes"
+    "export": "next build && next export && node ../generate.js"
   }
 }
