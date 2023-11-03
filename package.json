@@ -20,7 +20,7 @@
     "standard-version": "^9.5.0"
   },
   "peerDependencies": {
-    "next": "^12.x || ^13.x"
+    "next": "^12.x || ^13.x || ^14.x"
   },
   "bugs": {
     "url": "https://github.com/geops/next-nginx-routes/issues"
