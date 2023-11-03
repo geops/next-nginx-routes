@@ -12,15 +12,15 @@ Install all dependencies:
 yarn install
 ```
 
-### Export
+### Next.js build
 
-Run Next.js static HTML export:
+Run Next.js build and generate Nginx routes configuration file:
 
 ```shell
-yarn run export
+yarn run build
 ```
 
-### Build
+### Docker build
 
 Build Docker image:
 
@@ -28,7 +28,7 @@ Build Docker image:
 docker build -t next-nginx-routes-example .
 ```
 
-### Run
+### Docker run
 
 Start Docker container and open [localhost:8080](http://localhost:8080) in your browser:
 

@@ -1,8 +1,8 @@
 # next-nginx-routes
 
-Generate Nginx routes configuration file for Next.js static HMTL export.
+Generate Nginx routes configuration file for Next.js static HMTL export, also known as `output: export`.
 
-This [NPM package](https://www.npmjs.com/package/next-nginx-routes) allows you to convert Next.js routes like:
+This dependency-free [NPM package](https://www.npmjs.com/package/next-nginx-routes) provides a NPM script to convert all your Next.js routes like:
 
 ```json
 {
@@ -21,6 +21,8 @@ location ~ ^/([^/]+?)(?:/)?$ {
 }
 ```
 
+Note: currently only Next.js pages router is fully supported.
+
 ## Getting started
 
 ### Installation
@@ -31,23 +33,23 @@ yarn add --dev next-nginx-routes
 
 ### Generate Nginx configuration file
 
-Add next-nginx-routes to your export script:
+Add next-nginx-routes to your build script:
 
 ```json
 {
-  "export": "next build && next export && next-nginx-routes"
+  "build": "next build && next-nginx-routes"
 }
 ```
 
 And run Next.js export:
 
 ```shell
-yarn run export
+yarn run build
 ```
 
 ### Include Nginx configuration file
 
-Finally include the generated configuration file `next-routes.conf` and the Next.js output in your Nginx site configuration file.
+Finally include the generated configuration file `next-routes.conf` in your Nginx site configuration file and make the Next.js `out` directory available to Nginx.
 
 ## Requirements
 

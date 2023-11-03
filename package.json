@@ -3,6 +3,7 @@
   "description": "Generate Nginx routing configuration for static Next.js projects.",
   "version": "1.1.1",
   "keywords": [
+    "export",
     "Next.js",
     "Nginx",
     "configuration",
