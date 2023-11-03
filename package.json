@@ -10,7 +10,7 @@
     "routing",
     "static"
   ],
-  "license": "MIT",
+  "license": "BSD-2-Clause",
   "bin": "./generate.js",
   "devDependencies": {
     "eslint": "^8.52.0",
