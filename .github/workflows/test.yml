@@ -1,11 +1,22 @@
 name: Test
 on: [push]
 jobs:
+  lint:
+    runs-on: ubuntu-latest
+    name: Linting
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          cache: "yarn"
+      - run: yarn install
+      - run: yarn lint
   test:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node: [14, 16, 18]
+        next: [13, 14]
+        node: [18, 20]
     name: Test with Node.js ${{ matrix.node }}
     steps:
       - uses: actions/checkout@v2
@@ -14,6 +25,5 @@ jobs:
           node-version: ${{ matrix.node }}
           cache: "yarn"
       - run: yarn install
-      - run: cd example && yarn install
-      - run: yarn lint
+      - run: cd example && yarn install && yarn add next@${{ matrix.next }}
       - run: yarn test

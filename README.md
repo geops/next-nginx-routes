@@ -52,7 +52,7 @@ Finally include the generated configuration file `next-routes.conf` and the Next
 ## Requirements
 
 - [Next.js](https://nextjs.org) 12 or higher
-- [Node.js](https://nodejs.org) 14 or higher
+- [Node.js](https://nodejs.org) 18 or higher
 
 ## More
 
