@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.0](https://github.com/geops/next-nginx-routes/compare/v1.1.1...v1.2.0) (2023-11-03)
+
+
+### Features
+
+* support basePath ([#8](https://github.com/geops/next-nginx-routes/issues/8)) ([dbac294](https://github.com/geops/next-nginx-routes/commit/dbac294e2d39d99540e03e2f31f5110cadd9bff5))
+* support trailingSlash config ([7b62382](https://github.com/geops/next-nginx-routes/commit/7b6238282fba16bb504b3f70935d3ef98a48eeb3))
+
+
+### Bug Fixes
+
+* add Next.js 14 to peer dependencies ([edf33c5](https://github.com/geops/next-nginx-routes/commit/edf33c58cdc0b80e477c3f3ab5fd4be0ac58cadd))
+
 ### [1.1.1](https://github.com/geops/next-nginx-routes/compare/v1.1.0...v1.1.1) (2022-10-28)
 
 
