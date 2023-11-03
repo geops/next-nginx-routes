@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.2.1](https://github.com/geops/next-nginx-routes/compare/v1.2.0...v1.2.1) (2023-11-03)
+
+
+### Bug Fixes
+
+* generate correct routes for trailingSlash config ([d98e351](https://github.com/geops/next-nginx-routes/commit/d98e3515e8685654d9d47cf5c1cfbc73b93ac1b2))
+
 ## [1.2.0](https://github.com/geops/next-nginx-routes/compare/v1.1.1...v1.2.0) (2023-11-03)
 
 

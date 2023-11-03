@@ -1,7 +1,7 @@
 {
   "name": "next-nginx-routes",
   "description": "Generate Nginx routing configuration for static Next.js projects.",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "keywords": [
     "export",
     "Next.js",
