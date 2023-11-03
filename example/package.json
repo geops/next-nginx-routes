@@ -6,10 +6,9 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "eslint": "^8.26.0",
-    "eslint-config-next": "^13.0.0"
+    "next-nginx-routes": "./.."
   },
   "scripts": {
-    "export": "next build && next export && node ../generate.js"
+    "build": "next build && next-nginx-routes"
   }
 }

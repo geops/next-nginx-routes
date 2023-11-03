@@ -1,32 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`generate custom routes for example project 1`] = `
-"
-location ~ ^/next(?:/)?$ {
-    try_files /index.html /index.html;
-}
-
-location ~ ^/next/hello(?:/)?$ {
-    try_files /hello.html /index.html;
-}
-
-location ~ ^/next/hello/world(?:/)?$ {
-    try_files /hello/world.html /index.html;
-}
-
-location ~ ^/next/([^/]+?)(?:/)?$ {
-    try_files /[foo].html /index.html;
-}
-
-location ~ ^/next/([^/]+?)/([^/]+?)/hello(?:/)?$ {
-    try_files /[foo]/[bar]/hello.html /index.html;
-}
-
-location ~ ^/next/([^/]+?)/([^/]+?)/([^/]+?)(?:/)?$ {
-    try_files /[foo]/[bar]/[id].html /index.html;
-}"
-`;
-
 exports[`generate routes for example project 1`] = `
 "
 location ~ ^/(?:/)?$ {
@@ -50,6 +23,33 @@ location ~ ^/([^/]+?)/([^/]+?)/hello(?:/)?$ {
 }
 
 location ~ ^/([^/]+?)/([^/]+?)/([^/]+?)(?:/)?$ {
+    try_files /[foo]/[bar]/[id].html /index.html;
+}"
+`;
+
+exports[`generate routes for example project with custom basePath 1`] = `
+"
+location ~ ^/baz(?:/)?$ {
+    try_files /index.html /index.html;
+}
+
+location ~ ^/baz/hello(?:/)?$ {
+    try_files /hello.html /index.html;
+}
+
+location ~ ^/baz/hello/world(?:/)?$ {
+    try_files /hello/world.html /index.html;
+}
+
+location ~ ^/baz/([^/]+?)(?:/)?$ {
+    try_files /[foo].html /index.html;
+}
+
+location ~ ^/baz/([^/]+?)/([^/]+?)/hello(?:/)?$ {
+    try_files /[foo]/[bar]/hello.html /index.html;
+}
+
+location ~ ^/baz/([^/]+?)/([^/]+?)/([^/]+?)(?:/)?$ {
     try_files /[foo]/[bar]/[id].html /index.html;
 }"
 `;

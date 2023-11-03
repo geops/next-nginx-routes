@@ -6,31 +6,23 @@ const { readFileSync, writeFileSync } = require("fs");
 
 const routesManifest = "./.next/routes-manifest.json";
 const manifest = JSON.parse(readFileSync(routesManifest, "utf8"));
+const { basePath, dynamicRoutes, staticRoutes } = manifest;
 
-const routes = manifest.staticRoutes
-  .concat(manifest.dynamicRoutes)
-  .map((route) => {
-    const basePath = manifest.basePath || "";
+const routes = staticRoutes.concat(dynamicRoutes).map((route) => {
+  let { page, regex } = route;
 
-    let page = route.page;
-    let regex = route.regex;
+  if (route.page === "/") {
+    page = "/index";
+    regex = basePath ? `^${basePath}${regex.slice(2)}` : regex;
+  } else {
+    regex = `^${basePath || ""}${regex.slice(1)}`;
+  }
 
-    if (route.page === "/") {
-      page = "/index";
-    }
-
-    if (basePath) {
-      regex =
-        route.regex.slice(0, 1) +
-        basePath +
-        route.regex.slice(route.page === "/" ? 2 : 1);
-    }
-
-    return `
+  return `
 location ~ ${regex} {
     try_files ${page}.html /index.html;
 }`;
-  });
+});
 
 writeFileSync("./next-routes.conf", routes.join("\n"));
 

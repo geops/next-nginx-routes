@@ -8,7 +8,7 @@ test("generate routes for example project", () => {
   expect(readFileSync("./example/next-routes.conf", "utf8")).toMatchSnapshot();
 });
 
-test("generate custom routes for example project", () => {
-  execSync("cd example && export BASE_PATH=/next && npm run export");
+test("generate routes for example project with custom basePath", () => {
+  execSync("cd example && export BASE_PATH=/baz && npm run build");
   expect(readFileSync("./example/next-routes.conf", "utf8")).toMatchSnapshot();
 });
