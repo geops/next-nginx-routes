@@ -13,13 +13,15 @@ const { config } = JSON.parse(readFileSync(requiredServerFiles, "utf-8"));
 
 const routes = staticRoutes.concat(dynamicRoutes).map((route) => {
   let { page, regex } = route;
-  regex = `^${basePath || ""}${regex.slice(1)}`;
 
   if (route.page === "/") {
     page = "/index";
     regex = basePath ? `^${basePath}${regex.slice(2)}` : regex;
-  } else if (config.trailingSlash) {
-    page = `${route.page}/index`;
+  } else {
+    if (config.trailingSlash) {
+      page = `${route.page}/index`;
+    }
+    regex = `^${basePath || ""}${regex.slice(1)}`;
   }
 
   return `

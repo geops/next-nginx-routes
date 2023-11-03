@@ -61,22 +61,22 @@ location ~ ^/(?:/)?$ {
 }
 
 location ~ ^/hello(?:/)?$ {
-    try_files /hello.html /index.html;
+    try_files /hello/index.html /index.html;
 }
 
 location ~ ^/hello/world(?:/)?$ {
-    try_files /hello/world.html /index.html;
+    try_files /hello/world/index.html /index.html;
 }
 
 location ~ ^/([^/]+?)(?:/)?$ {
-    try_files /[foo].html /index.html;
+    try_files /[foo]/index.html /index.html;
 }
 
 location ~ ^/([^/]+?)/([^/]+?)/hello(?:/)?$ {
-    try_files /[foo]/[bar]/hello.html /index.html;
+    try_files /[foo]/[bar]/hello/index.html /index.html;
 }
 
 location ~ ^/([^/]+?)/([^/]+?)/([^/]+?)(?:/)?$ {
-    try_files /[foo]/[bar]/[id].html /index.html;
+    try_files /[foo]/[bar]/[id]/index.html /index.html;
 }"
 `;
