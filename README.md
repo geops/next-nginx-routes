@@ -31,6 +31,8 @@ Note: currently only Next.js pages router is fully supported.
 yarn add --dev next-nginx-routes
 ```
 
+Make sure [`output: "export"`](https://nextjs.org/docs/pages/building-your-application/deploying/static-exports#configuration) is configured in your `next.config.js` file.
+
 ### Generate Nginx configuration file
 
 Add next-nginx-routes to your build script:
