@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.3.0](https://github.com/geops/next-nginx-routes/compare/v1.2.1...v1.3.0) (2024-10-22)
+
+
+### Features
+
+* **next 15:** expand peer dependencies to include next 15 ([be2ff6f](https://github.com/geops/next-nginx-routes/commit/be2ff6f9cb2990f4fb7c343b36ed223b6f166a0c))
+
 ### [1.2.1](https://github.com/geops/next-nginx-routes/compare/v1.2.0...v1.2.1) (2023-11-03)
 
 
