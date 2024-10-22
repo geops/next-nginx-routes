@@ -15,8 +15,8 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        next: [13, 14]
-        node: [18, 20]
+        next: [13, 14, 15]
+        node: [18, 20, 22]
     name: Test with Next.js ${{ matrix.next }} and Node.js ${{ matrix.node }}
     steps:
       - uses: actions/checkout@v4
